@@ -1,7 +1,11 @@
 """
 Created on Feb 25, 2023
 
-@author: Wajiha
+@author: Wajih
+
+Data sets:
+Pakistan weather data: https://drive.google.com/file/d/1D4hJWuYogcu8zn-1JMfPChhP5zuFkoun/view?usp=sharing
+Population Distribution: https://drive.google.com/file/d/1yAB8afvBOlMndKYhJ_lFgH8Tv7Tbh6Q6/view?usp=sharing
 """
 
 import pandas as pd
@@ -53,9 +57,9 @@ def year_population_pie_chart(data, title):
     plt.axis('equal')
     
     plt.show()
+   
     
-
-def pak_weather lineplot(data, months):
+def pak_weather_lineplot(data, months):
     """
     Produces a minimal multiple-line graph to represent average temperature of 
     some cities of Pakistan during some initial months of year.
@@ -74,12 +78,10 @@ def pak_weather lineplot(data, months):
     
     
 
-population_data_path = ('/Volumes/Untitled 2/ds_assignments/assignment_1/' 
-+'population_by_country3.csv')
-population_data= pd.read_csv(population_data_path)
+population_data_path = r'C:\Users\wajih\OneDrive\Desktop\assignment_1\population_by_country3.csv'
+population_data = pd.read_csv(population_data_path)
 
-weather_data_path =  ('/Volumes/Untitled 2/ds_assignments/assignment_1/' 
-+'pak_temp.csv')
+weather_data_path = r'C:\Users\wajih\OneDrive\Desktop\assignment_1\pak_temp.csv'
 weather_data = pd.read_csv(weather_data_path)
 
 # Create an object of Panda's DataFrame using first 30 rows of the data
@@ -110,7 +112,7 @@ weather_data = weather_data.drop(columns=["Range"])
 months = ["January","February","March","April","May","June","July","August",
           "September","October","November","December"]
 
-pak_weather lineplot(weather_data.head(), months[0:5])
+pak_weather_lineplot(weather_data.head(), months[0:5])
 
 
 
